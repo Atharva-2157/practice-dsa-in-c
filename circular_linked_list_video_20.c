@@ -27,6 +27,8 @@ void insert_at_start(struct node *head, int data) {
     new_node->data = data;
     new_node->next = head;
     current_node->next = new_node;
+
+    head = new_node;
 }
 
 // Function to free a circular linked list
