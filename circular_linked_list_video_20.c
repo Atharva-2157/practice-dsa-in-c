@@ -14,6 +14,19 @@ void linked_list_traversal(struct node *head) {
     }
     while(current != head);
     printf("\n");
+} 
+
+void insert_at_start(struct node *head, int data) {
+    struct node *new_node = (struct node*)malloc(sizeof(struct node));
+    struct node *current_node = head;
+
+    while(current_node->next != head) {
+        current_node = current_node->next;
+    }
+
+    new_node->data = data;
+    new_node->next = head;
+    current_node->next = new_node;
 }
 
 // Function to free a circular linked list
