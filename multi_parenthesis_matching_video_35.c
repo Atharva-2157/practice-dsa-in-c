@@ -146,6 +146,7 @@ int parenthesis_match(char* exp) {
 
 int multi_parenthesis_match(char* exp) {
     STACK* s = create_stack(string_length(exp));
+    char top_char;
     for (int i = 0; exp[i] != '\0'; i++) {
         if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[') {
             push(s, exp[i]);
@@ -154,7 +155,7 @@ int multi_parenthesis_match(char* exp) {
                 free_stack(s);
                 return 0; // Unmatched closing parenthesis
             }
-            char top_char = pop(s);
+            top_char = pop(s);
             if ((exp[i] == ')' && top_char != '(') ||
                 (exp[i] == '}' && top_char != '{') ||
                 (exp[i] == ']' && top_char != '[')) {
