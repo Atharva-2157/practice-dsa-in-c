@@ -173,7 +173,10 @@ char* infix_to_postfix(char* infix) {
                 postfix[postfix_index++] = popped_value;
             }
         } else if (is_operator(infix[index])) {
-            while(peek(s, &top_value) && get_precedence(top_value) >= get_precedence(infix[index])) {
+            while(peek(s, &top_value) && 
+                    (get_precedence(top_value) > get_precedence(infix[index]) ||
+                        (get_precedence(top_value) == get_precedence(infix[index]) && infix[index] != '^')
+            )) {
                 pop(s, &popped_value);
                 postfix[postfix_index++] = popped_value;
             }
