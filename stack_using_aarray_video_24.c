@@ -68,7 +68,7 @@ int pop(struct stack *ptr) {
 }
 
 int peek(struct stack* s) {
-    if (is_empty(ptr)) {
+    if (is_empty(s)) {
         printf("Stack Underflow! Cannot peek.\n");
         return -1;  // or some error value
     }
