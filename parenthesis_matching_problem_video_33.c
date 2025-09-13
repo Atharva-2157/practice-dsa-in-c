@@ -1,9 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-#include<stdio.h>
-#include<stdlib.h>
-
 typedef struct node {
     int data;
     struct node* next;
@@ -121,8 +118,16 @@ void free_stack(STACK* s) {
     // printf("Stack memory cleanup done\n");
 }
 
+int string_length(char* str) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    return length;
+} 
+
 int parenthesis_match(char* exp) {
-    STACK* s = create_stack(100);
+    STACK* s = create_stack(string_length(exp));
     for (int i = 0; exp[i] != '\0'; i++) {
         if (exp[i] == '(') {
             push(s, '(');
