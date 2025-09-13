@@ -67,6 +67,14 @@ int pop(struct stack *ptr) {
     }
 }
 
+int peek(struct stack* s) {
+    if (s->top == -1) {
+        printf("Stack Underflow! Cannot peek.\n");
+        return -1;  // or some error value
+    }
+    return s->arr[s->top];
+}
+
 int free_stack(struct stack *ptr) {
     if (ptr == NULL) {
         return -1;
