@@ -84,6 +84,28 @@ int peek(STACK* s) {
     }
 }
 
+int stack_top(STACK* s) {
+    if (is_empty(s)) {
+        // printf("Stack is empty! No top element\n");
+        return -1;
+    } else {
+        return s->top->data;
+    }
+}
+
+int stack_bottom(STACK* s) {
+    if (is_empty(s)) {
+        // printf("Stack is empty! No bottom element\n");
+        return -1;
+    } else {
+        NODE* current = s->top;
+        while (current->next != NULL) {
+            current = current->next;
+        }
+        return current->data;
+    }
+}
+
 void free_stack(STACK* s) {
     NODE* current = s->top;
     NODE* next_node;
