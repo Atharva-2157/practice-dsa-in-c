@@ -3,7 +3,7 @@
 void bubble_sort(int arr[], int n) {
     int is_swapped = 0;
     int no_of_passed = 0;
-    for (int i = 0; i < n-2; i++) {
+    for (int i = 0; i < n-1; i++) {
         is_swapped = 0;
         no_of_passed++;
         for (int j = 0; j < n-i-1; j++) {
