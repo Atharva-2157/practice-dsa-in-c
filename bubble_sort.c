@@ -3,13 +3,14 @@
 void bubble_sort(int arr[], int n) {
     int is_swapped = 0;
     int no_of_passed = 0;
+    int temp;
     for (int i = 0; i < n-1; i++) {
         is_swapped = 0;
         no_of_passed++;
         for (int j = 0; j < n-i-1; j++) {
             if (arr[j] > arr[j+1]) {
                 // Swap arr[j] and arr[j+1]
-                int temp = arr[j];
+                temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
                 is_swapped = 1;
